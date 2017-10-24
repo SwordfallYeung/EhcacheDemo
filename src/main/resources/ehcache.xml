@@ -1,5 +1,18 @@
 <ehcache updateCheck="false" dynamicConfig="false">
 
+    <!--
+    集群配置
+    配置集群后，A机器放数据，在B机器上能拿到数据，B机器放数据，A机器也可以拿到数据
+    -->
+    <!--另一台机子的ip缓存信息-->
+    <!--<cacheManagerPeerProviderFactory-->
+            <!--class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"-->
+            <!--properties="peerDiscovery=manual,rmiUrls=//192.168.93.129:40001/demoCache"/>-->
+    <!--hostName代表本机子的ip-->
+    <!--<cacheManagerPeerListenerFactory-->
+            <!--class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"-->
+            <!--properties="hostName=localhost,port=40001,socketTimeoutMillis=2000" />-->
+
     <!--用来配置磁盘缓存使用的物理路径,Ehcache磁盘缓存使用的文件后缀名是*.data和*.index。-->
     <diskStore path="java.io.tmpdir/ehcache"/>
 
